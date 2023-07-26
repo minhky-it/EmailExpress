@@ -1,14 +1,13 @@
-// Imports the express module
+// Imports modules
 const express = require('express');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 // Create a new app instance
 const app = express();
 
-app.get('/', (req, res)=>{
-    res.send({hi: 'there',
-    qq: "1234"
-});
-});
+// Use passport and google strategy
+passport.use(new GoogleStrategy());
 
 // Dynamic port
 const PORT = process.env.PORT || 5000;
