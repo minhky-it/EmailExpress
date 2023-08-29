@@ -5,6 +5,7 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 require('./models/Users');
 require("./services/passport");
+const bodyParser = require('body-parser');
 const keys = require("./config/key");
 
 // Connect to MongoDB
@@ -12,6 +13,9 @@ mongoose.connect(keys.mongoURI);
 
 // Create a new app instance
 const app = express();
+// Middleware
+app.use(bodyParser.json());
+
 // Enabling cookie
 app.use(
   cookieSession({
