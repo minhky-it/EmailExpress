@@ -31,7 +31,7 @@ require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
 
 
-if(process.env.NODE_ENV === 'prod'){
+if(process.env.NODE_ENV === 'production'){
   // Express will serve up production access
   // Like our main.js / main.css file!
   const path = require('path');
