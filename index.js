@@ -34,9 +34,9 @@ require("./routes/billingRoutes")(app);
 if(process.env.NODE_ENV === 'prod'){
   // Express will serve up production access
   // Like our main.js / main.css file!
-  const path = require('path');
-  app.get('*', (req, res)=>{
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  app.get('*', function (req, res) {
+    const index = path.join(__dirname, 'build', 'index.html');
+    res.sendFile(index);
   });
 
 }
