@@ -36,7 +36,7 @@ if(process.env.NODE_ENV === 'production'){
   // Like our main.js / main.css file!
   const path = require('path');
   app.get('*', function (req, res) {
-    const index = path.join(__dirname, 'public', 'index.html');
+    const index = path.join(__dirname, 'build', 'index.html');
     res.sendFile(index);
   });
 
