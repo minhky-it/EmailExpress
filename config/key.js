@@ -1,3 +1,4 @@
+console.log(process.env.NODE_ENV);
 if(process.env.NODE_ENV === 'production'){
     // We're in production - return the prod set of keys
     module.exports = require('./prod');
