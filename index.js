@@ -3,7 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
-require('./models/Users');
+require('./models/User');
+require('./models/Survey');
 require("./services/passport");
 const bodyParser = require('body-parser');
 const keys = require("./config/key");
@@ -29,7 +30,6 @@ app.use(passport.session());
 
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
-
 
 if(process.env.NODE_ENV === 'production'){
   // Express will serve up production access
